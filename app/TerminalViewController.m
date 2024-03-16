@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 10/17/17.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import "TerminalViewController.h"
 #import "AppDelegate.h"
 #import "TerminalView.h"
@@ -536,3 +538,5 @@
 }
 
 @end
+
+#endif

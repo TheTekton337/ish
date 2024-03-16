@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 6/7/20.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import <FileProvider/FileProvider.h>
 #import "Roots.h"
 #import "AppGroup.h"
@@ -232,3 +234,5 @@ void root_progress_callback(void *cookie, double progress, const char *message, 
 }
 
 @end
+
+#endif

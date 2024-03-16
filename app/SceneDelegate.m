@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 10/26/19.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import "SceneDelegate.h"
 #import "AboutViewController.h"
 
@@ -66,3 +68,5 @@ static NSString *const TerminalUUID = @"TerminalUUID";
 }
 
 @end
+
+#endif

@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 6/18/20.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import <UIKit/UIKit.h>
 #import "Roots.h"
 
@@ -17,3 +19,5 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

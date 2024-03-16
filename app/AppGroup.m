@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 2/28/20.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import "AppGroup.h"
 #import <Foundation/Foundation.h>
 #import <mach-o/ldsyms.h>
@@ -105,3 +107,4 @@ NSURL *ContainerURL(void) {
     NSString *appGroup = CurrentAppGroups()[0];
     return [NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:appGroup];
 }
+#endif

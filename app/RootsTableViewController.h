@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 6/7/20.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,3 +16,5 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

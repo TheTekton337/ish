@@ -5,9 +5,12 @@
 //  Created by Theodore Dubois on 10/17/17.
 //
 
-#import <UIKit/UIKit.h>
+#ifndef ISH_LIBISHSHARED
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import <UIKit/UIKit.h>
+#import <iSHKit/ISHApplicationDelegate.h>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate, ISHApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 - (void)exitApp;
@@ -26,3 +29,4 @@ extern NSString *const ProcessExitedNotification;
 extern NSString *const KernelPanicNotification;
 #endif
 
+#endif

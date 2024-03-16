@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 9/23/18.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import "AboutViewController.h"
 #import "AppDelegate.h"
 #import "CurrentRoot.h"
@@ -163,3 +165,5 @@
 }
 
 @end
+
+#endif

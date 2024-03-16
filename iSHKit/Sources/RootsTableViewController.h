@@ -1,0 +1,22 @@
+//
+//  RootsTableViewController.h
+//  iSH
+//
+//  Created by Theodore Dubois on 6/7/20.
+//  Refactored for iSHKit framework
+//
+
+#ifndef RootsTableViewController_h
+#define RootsTableViewController_h
+
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface RootsTableViewController : UITableViewController <UIDocumentPickerDelegate>
+
+@end
+
+NS_ASSUME_NONNULL_END
+
+#endif /* RootsTableViewController_h */

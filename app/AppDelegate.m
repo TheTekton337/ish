@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 10/17/17.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #include <resolv.h>
 #include <arpa/inet.h>
 #include <netdb.h>
@@ -356,4 +358,6 @@ void NetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 NSString *const ProcessExitedNotification = @"ProcessExitedNotification";
 #else
 NSString *const KernelPanicNotification = @"KernelPanicNotification";
+#endif
+
 #endif

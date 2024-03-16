@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 6/7/20.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import "Roots.h"
 #import "RootsTableViewController.h"
 #import "ProgressReportViewController.h"
@@ -238,3 +240,5 @@
 }
 
 @end
+
+#endif

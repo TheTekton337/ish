@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 6/18/20.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import "ProgressReportViewController.h"
 
 @interface ProgressReportViewController ()
@@ -79,3 +81,5 @@
 }
 
 @end
+
+#endif

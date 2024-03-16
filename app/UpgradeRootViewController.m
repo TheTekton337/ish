@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 11/27/21.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import "UpgradeRootViewController.h"
 #import "AppDelegate.h"
 #import "TerminalView.h"
@@ -137,3 +139,5 @@
 }
 
 @end
+
+#endif

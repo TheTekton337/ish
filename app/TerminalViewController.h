@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 10/17/17.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import <UIKit/UIKit.h>
 #import "Terminal.h"
 
@@ -20,3 +22,5 @@
 @end
 
 extern struct tty_driver ios_tty_driver;
+
+#endif

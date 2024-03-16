@@ -5,6 +5,8 @@
 //  Created by Theodore Dubois on 10/26/19.
 //
 
+#ifndef ISH_LIBISHSHARED
+
 #import <UIKit/UIKit.h>
 #import "TerminalViewController.h"
 
@@ -20,3 +22,5 @@ API_AVAILABLE(ios(13))
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif
