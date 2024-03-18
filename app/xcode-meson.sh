@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # Try to figure out the user's PATH to pick up their installed utilities.
-export PATH="$PATH:$(sudo -u "$USER" -i printenv PATH)"
+#export PATH="$PATH:$(sudo -u "$USER" -i printenv PATH)"
+
+echo "$SRCROOT/app/xcode-env.sh"
+
+source "$SRCROOT/app/xcode-env.sh"
 
 mkdir -p "$MESON_BUILD_DIR"
 cd "$MESON_BUILD_DIR"

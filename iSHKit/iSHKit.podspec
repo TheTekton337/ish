@@ -10,52 +10,74 @@ Pod::Spec.new do |spec|
   spec.author       = { 'Terrance Wood' => 'pntkl@ixqus.com' }
   spec.platform     = :ios, '11.0'
   spec.source       = { :git => 'https://github.com/TheTekton337/ish.git', :tag => spec.version.to_s }
+  spec.source_files = 'iSHKit/**/*.{h,m}', 'iSHKit/Libraries/**/*.a'
   spec.ios.frameworks = ['UIKit', 'Foundation', 'CoreLocation', 'SystemConfiguration']
   spec.libraries    = 'bz2', 'iconv', 'resolv'
+  spec.vendored_libraries = 'iSHKit/Libraries/*.a'
+  spec.vendored_frameworks = 'iSHKit/Frameworks/iSHKit.framework'
 
   # Global build settings and definitions
   spec.pod_target_xcconfig = {
     'USE_HEADERMAP' => 'YES',
     'CLANG_CXX_LIBRARY' => 'libc++',
     'ENABLE_BITCODE' => 'NO',
-    'HEADER_SEARCH_PATHS' => '"$(PODS_TARGET_SRCROOT)/iSHKit" $(inherited)',
-    'LIBRARY_SEARCH_PATHS' => '"$(PODS_TARGET_SRCROOT)/iSHKit/lib" $(inherited)',
+    'DISABLE_MANUAL_TARGET_ORDER_BUILD_WARNING' => 'YES',
+    'HEADER_SEARCH_PATHS' => '$(inherited) "$(PODS_TARGET_SRCROOT)/iSHKit"',
+    'FRAMEWORK_SEARCH_PATHS' => '$(inherited) "$(PODS_TARGET_SRCROOT)/iSHKit/Frameworks"',
+    'LIBRARY_SEARCH_PATHS' => '$(inherited) "$(PODS_TARGET_SRCROOT)/iSHKit/Libraries"',
+    'OTHER_LDFLAGS' => '$(inherited)',
   }
 
-  # Use prepare_command to build static libraries with xcodebuild
+  # Use prepare_command to build static libraries and framework with xcodebuild
   spec.prepare_command = <<-CMD
     #!/bin/sh
-    # set -e
-    # Assuming the iSHKit target is part of the iSH.xcodeproj
+    set -e
+    export PATH=$PATH:/usr/local/bin
+    export PATH=$HOME/homebrew/bin:$PATH
+
+    SDKS=("iphoneos" "iphonesimulator")
+    #LIBS=("libiSHShared.a" "libfakefs.a" "libish.a" "libish_emu.a" "libarchive.a")
+    LIBS=("libiSHShared.a" "libish.a" "libarchive.a")
+    FRAMEWORKS=("iSHKit.framework")
     PODS_TARGET_SRCROOT=$PWD
-    #echo "SRCY: ${HOME}"
-    #echo "SRCY2: ${PWD}"
-    export PATH="$HOME/homebrew/bin:$PATH"
+    ISHKIT_BUILD_DIR="${PODS_TARGET_SRCROOT}/build"
+    LIBRARIES_PATH="${PODS_TARGET_SRCROOT}/Libraries"
+    FRAMEWORKS_PATH="${PODS_TARGET_SRCROOT}/Frameworks"
+
     cd $PODS_TARGET_SRCROOT/../deps/libapps
     ./hterm/bin/mkdist
-    cp -r "hterm/dist/." $PODS_TARGET_SRCROOT/../Frameworks
+    cp -r "hterm/dist/." "${FRAMEWORKS_PATH}"
     cd ../..
-    # Create a unique build directory for iSHKit within the pod's directory structure
-    ISHKIT_BUILD_DIR="${PODS_TARGET_SRCROOT}/build"
-    mkdir -p "${ISHKIT_BUILD_DIR}"
-    xcodebuild -project "${PODS_TARGET_SRCROOT}/../iSH.xcodeproj" \
-             -target "iSHKit" \
-             -configuration Release \
-             -sdk iphoneos \
-             IPHONEOS_DEPLOYMENT_TARGET=12.0 \
-             BUILD_DIR="${ISHKIT_BUILD_DIR}" \
-             clean build
-    # Copy the built static library into the pod directory for vendoring
-    mkdir -p "${PODS_TARGET_SRCROOT}/iSHKit/lib/"
-    cp "${PODS_TARGET_SRCROOT}/build/Release-iphoneos/*.a" "${PODS_TARGET_SRCROOT}/iSHKit/lib/"
-    
-    # FileProvider note: Since prepare_command can't be used in subspecs, ensure any necessary setup for all components is covered here.
-  CMD
-  
-  # Vendored libraries
-  spec.vendored_libraries = 'iSHKit/lib/libiSHKit.a', 'iSHKit/lib/libfakefs.a', 'iSHKit/lib/libish.a', 'iSHKit/lib/libish_emu.a', 'iSHKit/lib/libarchive.a'
 
-  # Resource bundles configuration
+    rm -rf "${ISHKIT_BUILD_DIR}" "${LIBRARIES_PATH}" "${FRAMEWORKS_PATH}"
+    # mkdir -p "${ISHKIT_BUILD_DIR}"
+    mkdir -p "${LIBRARIES_PATH}"
+    mkdir -p "${FRAMEWORKS_PATH}"
+
+    for SDK in "${SDKS[@]}"; do
+      xcodebuild -project "${PODS_TARGET_SRCROOT}/../iSH.xcodeproj" \
+                -target "iSHKit" \
+                -configuration Release \
+                -sdk $SDK \
+                IPHONEOS_DEPLOYMENT_TARGET=12.0 \
+                BUILD_DIR="${ISHKIT_BUILD_DIR}/${SDK}" \
+                BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+                #clean build
+    done
+
+    # Create universal binaries
+    for LIB in "${LIBS[@]}"; do
+      lipo -create -output "${LIBRARIES_PATH}/${LIB}" \
+      "${ISHKIT_BUILD_DIR}/iphoneos/Release-iphoneos/${LIB}" \
+      "${ISHKIT_BUILD_DIR}/iphonesimulator/Release-iphonesimulator/${LIB}"
+    done
+
+    # Copy the framework from the device build (assuming it's the same for both architectures)
+    for FRAMEWORK in "${FRAMEWORKS[@]}"; do
+      cp -pR "${ISHKIT_BUILD_DIR}/iphoneos/Release-iphoneos/${FRAMEWORK}" "${FRAMEWORKS_PATH}/"
+    done
+  CMD
+
   spec.resource_bundles = {
     'iSHKit' => [
       'app/{localization}/*.storyboard',
@@ -66,61 +88,5 @@ Pod::Spec.new do |spec|
     ]
   }
 
-  spec.public_header_files = [
-    'app/Terminal.h',
-    'iSHKit/iSHKit.h',
-    'iSHKit/Includes/**/*.h',
-    'iSHKit/Sources/**/*.h'
-  ]
-
-  # Subspec for iSHShared
-  # spec.subspec 'iSHShared' do |ss|
-  #   ss.vendored_libraries = 'iSHKit/lib/libiSHShared.a'
-  #   # You might specify additional settings specific to this library here.
-  # end
-
-  # # Subspec for ish
-  # spec.subspec 'ish' do |ss|
-  #   ss.vendored_libraries = 'iSHKit/lib/libish.a'
-  #   # Additional settings for ish
-  # end
-
-  # # Subspec for fakefs
-  # spec.subspec 'fakefs' do |ss|
-  #   ss.vendored_libraries = 'iSHKit/lib/libfakefs.a'
-  #   # Additional settings for fakefs
-  # end
-
-  # # Subspec for ish_emu
-  # spec.subspec 'ish_emu' do |ss|
-  #   ss.vendored_libraries = 'iSHKit/lib/libish_emu.a'
-  #   # Additional settings for ish_emu
-  # end
-
-  # # Subspec for Archive
-  # spec.subspec 'Archive' do |ss|
-  #   ss.vendored_libraries = 'iSHKit/lib/libarchive.a'
-  #   # Additional settings for Archive
-  # end
-
-  # spec.subspec 'FileProvider' do |ss|
-  #   # As prepare_command cannot be used here, ensure to detail manual steps in your documentation.
-  #   ss.preserve_paths = 'app/FileProvider/Info.plist', 'app/FileProvider/FileProvider.entitlements'
-  #   ss.frameworks = 'UIKit', 'Foundation', 'CoreData'
-  #   ss.source_files = 'app/FileProvider/**/*.{h,m,swift}'
-  #   ss.resources = 'app/FileProvider/*.xcassets'
-  #   ss.vendored_libraries = 'iSHKit/lib/libish_emu.a', 'iSHKit/lib/libfakefs.a'
-  # end
-  
-  # If iSHKit depends on other pods, specify them here
-  # spec.dependency 'SomeOtherPod'
-  
-  # Include resources if there are any
-  # spec.resources = 'path/to/resources/*.png'
-  
-  # Specify public_header_files if needed
-  # spec.public_header_files = 'iSHKit/**/*.h'
-  
-  # If iSHKit includes Swift code, specify the Swift version
-  # spec.swift_version = '5.0'
+  spec.public_header_files = 'iSHKit/**/*.h'
 end

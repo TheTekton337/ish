@@ -1,0 +1,6 @@
+framework module iSHKit {
+    umbrella header "iSHKit.h"
+
+    export *
+    module * { export * }
+}

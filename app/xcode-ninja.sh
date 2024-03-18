@@ -1,6 +1,8 @@
 #!/bin/sh
 
 # Try to figure out the user's PATH to pick up their installed utilities.
-export PATH="$PATH:$(sudo -u "$USER" -i printenv PATH)"
+#export PATH="$PATH:$(sudo -u "$USER" -i printenv PATH)"
+
+source "$SRCROOT/app/xcode-env.sh"
 
 ninja "$@"

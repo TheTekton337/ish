@@ -5,6 +5,9 @@
 //  Created by Terrance Wood on 3/11/24.
 //
 
+#ifndef iSHKit_h
+#define iSHKit_h
+
 #import <Foundation/Foundation.h>
 
 //! Project version number for iSHKit.
@@ -32,3 +35,5 @@ FOUNDATION_EXPORT const unsigned char iSHKitVersionString[];
 #import <iSHKit/ProgressReportViewController.h>
 
 #import <iSHKit/Terminal.h>
+
+#endif /* iSHKit_h */

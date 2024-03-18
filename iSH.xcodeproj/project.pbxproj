@@ -105,6 +105,12 @@
 		497F6D5C254E609700C82F46 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BB7D93822087C2890008DA78 /* main.c */; };
 		497F6D87254E62E100C82F46 /* libish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB13F7DC200AD81D003D1C4D /* libish.a */; };
 		49FF844B2A06249F00850B7A /* ExceptionExfiltrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF844A2A06249F00850B7A /* ExceptionExfiltrator.m */; };
+		5DAD217C2BA7E90200CCA448 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB235536235D49B300139E00 /* CoreLocation.framework */; };
+		5DAD217D2BA7E90700CCA448 /* libarchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB10E5C8248DBAA1009C7A74 /* libarchive.a */; platformFilters = (ios, macos, ); };
+		5DAD217E2BA7E90C00CCA448 /* libish_emu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFB2C5B2590257E00545EAB /* libish_emu.a */; platformFilters = (ios, macos, ); };
+		5DAD217F2BA7E90F00CCA448 /* libish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB13F7DC200AD81D003D1C4D /* libish.a */; platformFilters = (ios, macos, ); };
+		5DAD21802BA7E91400CCA448 /* libfakefs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB21A16F2689041500BD19B4 /* libfakefs.a */; platformFilters = (ios, macos, ); };
+		5DAD21812BA7E91800CCA448 /* libiSHShared.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8557B02BA01C0800465F1A /* libiSHShared.a */; };
 		8B2C83202BA2E805000D65FB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C831F2BA2E805000D65FB /* AboutViewController.m */; };
 		8B2C83212BA2EA9E000D65FB /* AboutViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2C831E2BA2E7F0000D65FB /* AboutViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B2C83242BA2EDDE000D65FB /* AppGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2C83222BA2EDDE000D65FB /* AppGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -114,7 +120,6 @@
 		8B5FFEF32BA0A90B0022B503 /* iOSFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 408A2639236440F8008A4E81 /* iOSFS.m */; };
 		8B5FFEF42BA0A9100022B503 /* LocationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = BB235533235D488400139E00 /* LocationDevice.m */; };
 		8B5FFEF52BA0A9150022B503 /* PasteboardDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B337322EA235C00B4C03E /* PasteboardDevice.m */; };
-		8B5FFEFA2BA0ABD00022B503 /* libiSHShared.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8557B02BA01C0800465F1A /* libiSHShared.a */; platformFilter = ios; };
 		8B5FFF032BA0C3430022B503 /* ISHApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5FFF022BA0C14E0022B503 /* ISHApplicationDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B5FFF062BA0C4200022B503 /* ISHNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5FFF052BA0C4200022B503 /* ISHNotifications.m */; };
 		8B5FFF072BA0C47D0022B503 /* ISHNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B5FFF042BA0C3940022B503 /* ISHNotifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -190,17 +195,10 @@
 		8B8557BE2BA01C4400465F1A /* iSHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8557B62BA01C4300465F1A /* iSHKit.framework */; };
 		8B8557C52BA01C4400465F1A /* iSHKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8557C42BA01C4400465F1A /* iSHKitTests.m */; };
 		8B8557C62BA01C4400465F1A /* iSHKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B8557B82BA01C4300465F1A /* iSHKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B8557C92BA01C4400465F1A /* iSHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8557B62BA01C4300465F1A /* iSHKit.framework */; };
-		8B8557CA2BA01C4400465F1A /* iSHKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8557B62BA01C4300465F1A /* iSHKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8B8557DC2BA037F900465F1A /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFB55652158644C00DFE6DE /* libresolv.tbd */; };
 		8B8557DD2BA0380200465F1A /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6DB260216435330047A611 /* libiconv.tbd */; };
 		8B8557DE2BA0380800465F1A /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAEE338249B58E80069EBB5 /* libbz2.tbd */; };
 		8B8557DF2BA0381300465F1A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA8E2C0236FF5EA00515F76 /* SystemConfiguration.framework */; };
-		8B8557E02BA0381800465F1A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB235536235D49B300139E00 /* CoreLocation.framework */; };
-		8B8557E12BA0382900465F1A /* libfakefs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB21A16F2689041500BD19B4 /* libfakefs.a */; platformFilters = (ios, macos, ); };
-		8B8557E22BA0382900465F1A /* libish_emu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFB2C5B2590257E00545EAB /* libish_emu.a */; platformFilters = (ios, macos, ); };
-		8B8557E32BA0382900465F1A /* libish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB13F7DC200AD81D003D1C4D /* libish.a */; platformFilters = (ios, macos, ); };
-		8B8557E52BA0382900465F1A /* libarchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB10E5C8248DBAA1009C7A74 /* libarchive.a */; platformFilters = (ios, macos, ); };
 		8BE1BFDF2BA49BE600638C8A /* ProgressReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE1BFDE2BA49BE600638C8A /* ProgressReportViewController.m */; };
 		8BE1BFE02BA49C7500638C8A /* ProgressReportViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BE1BFDD2BA49BD500638C8A /* ProgressReportViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8BE1BFE32BA49CBF00638C8A /* RootsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE1BFE22BA49CBF00638C8A /* RootsTableViewController.m */; };
@@ -382,28 +380,28 @@
 			remoteGlobalIDString = BB13F7DB200AD81D003D1C4D;
 			remoteInfo = libish;
 		};
-		5DD89CD42BA636E800858819 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BBFB2C542590257E00545EAB;
-			remoteInfo = libish_emu;
-		};
-		5DD89CD62BA6371500858819 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB21A1662689041500BD19B4;
-			remoteInfo = libfakefs;
-		};
-		8B5FFEF62BA0A9FB0022B503 /* PBXContainerItemProxy */ = {
+		5DAD21722BA7E4A700CCA448 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BB88F48F2154760800A341FD;
 			remoteInfo = iSHFileProvider;
 		};
-		8B5FFEF82BA0ABC80022B503 /* PBXContainerItemProxy */ = {
+		5DAD21782BA7E8EC00CCA448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB10E0C1248DA5B0009C7A74 /* libarchive.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BB10E0D5248DA67B009C7A74;
+			remoteInfo = libarchive;
+		};
+		5DAD217A2BA7E8F100CCA448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB13F7DB200AD81D003D1C4D;
+			remoteInfo = libish;
+		};
+		5DB0D7462BA7147600CFABE6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
 			proxyType = 1;
@@ -423,27 +421,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = BB792B4F1F96D90D00FFB7A4;
 			remoteInfo = iSH;
-		};
-		8B8557C72BA01C4400465F1A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B8557B52BA01C4300465F1A;
-			remoteInfo = iSHKit;
-		};
-		8B8557D82BA037E300465F1A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB13F7DB200AD81D003D1C4D;
-			remoteInfo = libish;
-		};
-		8B8557DA2BA037E300465F1A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB10E0C1248DA5B0009C7A74 /* libarchive.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BB10E0D5248DA67B009C7A74;
-			remoteInfo = libarchive;
 		};
 		BB10E5C7248DBAA1009C7A74 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -575,7 +552,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8B8557CA2BA01C4400465F1A /* iSHKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -769,7 +745,12 @@
 		497F6D47254E605F00C82F46 /* ish */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ish; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FF844A2A06249F00850B7A /* ExceptionExfiltrator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExceptionExfiltrator.m; sourceTree = "<group>"; };
 		49FF844C2A0624AF00850B7A /* ExceptionExfiltrator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExceptionExfiltrator.h; sourceTree = "<group>"; };
-		5DD89CD22BA610D200858819 /* iSHKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = iSHKit.podspec; sourceTree = "<group>"; };
+		5D93F6A02BA686360046CCE3 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		5DB0D6D32BA6A7DD00CFABE6 /* xcode-env.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "xcode-env.sh"; path = "app/xcode-env.sh"; sourceTree = "<group>"; };
+		5DB0D6EE2BA6B22B00CFABE6 /* fakefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fakefs.h; sourceTree = "<group>"; };
+		5DD570072BA77D78008522E5 /* TestLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLib.h; sourceTree = "<group>"; };
+		5DD570082BA77D78008522E5 /* TestLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLib.m; sourceTree = "<group>"; };
+		5DD89CD22BA610D200858819 /* iSHKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = iSHKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		650B337222EA235C00B4C03E /* PasteboardDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteboardDevice.h; sourceTree = "<group>"; };
 		650B337322EA235C00B4C03E /* PasteboardDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteboardDevice.m; sourceTree = "<group>"; };
 		8632A7BD219A59FB00F02325 /* UserPreferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserPreferences.h; sourceTree = "<group>"; };
@@ -791,8 +772,6 @@
 		8B5FFF152BA2551C0022B503 /* ApplicationEnvironmentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationEnvironmentManager.m; sourceTree = "<group>"; };
 		8B5FFF352BA2E25E0022B503 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		8B5FFF372BA2E2A80022B503 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		8B85577B2BA01BF800465F1A /* libiSHShared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libiSHShared.h; sourceTree = "<group>"; };
-		8B85577C2BA01BF800465F1A /* libiSHShared.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libiSHShared.m; sourceTree = "<group>"; };
 		8B8557B02BA01C0800465F1A /* libiSHShared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiSHShared.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8557B62BA01C4300465F1A /* iSHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iSHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B8557B82BA01C4300465F1A /* iSHKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iSHKit.h; sourceTree = "<group>"; };
@@ -971,12 +950,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B5FFEFA2BA0ABD00022B503 /* libiSHShared.a in Frameworks */,
-				8B8557E12BA0382900465F1A /* libfakefs.a in Frameworks */,
-				8B8557E32BA0382900465F1A /* libish.a in Frameworks */,
-				8B8557E22BA0382900465F1A /* libish_emu.a in Frameworks */,
-				8B8557E52BA0382900465F1A /* libarchive.a in Frameworks */,
-				8B8557E02BA0381800465F1A /* CoreLocation.framework in Frameworks */,
+				5DAD21812BA7E91800CCA448 /* libiSHShared.a in Frameworks */,
+				5DAD21802BA7E91400CCA448 /* libfakefs.a in Frameworks */,
+				5DAD217F2BA7E90F00CCA448 /* libish.a in Frameworks */,
+				5DAD217E2BA7E90C00CCA448 /* libish_emu.a in Frameworks */,
+				5DAD217D2BA7E90700CCA448 /* libarchive.a in Frameworks */,
+				5DAD217C2BA7E90200CCA448 /* CoreLocation.framework in Frameworks */,
 				8B8557DF2BA0381300465F1A /* SystemConfiguration.framework in Frameworks */,
 				8B8557DE2BA0380800465F1A /* libbz2.tbd in Frameworks */,
 				8B8557DD2BA0380200465F1A /* libiconv.tbd in Frameworks */,
@@ -1010,7 +989,6 @@
 				BB10E5C9248DBAAC009C7A74 /* libarchive.a in Frameworks */,
 				BB235537235D49B300139E00 /* CoreLocation.framework in Frameworks */,
 				BBA8E2C1236FF5EA00515F76 /* SystemConfiguration.framework in Frameworks */,
-				8B8557C92BA01C4400465F1A /* iSHKit.framework in Frameworks */,
 				BBAEE339249B58E80069EBB5 /* libbz2.tbd in Frameworks */,
 				BB6DB261216435340047A611 /* libiconv.tbd in Frameworks */,
 				BBFB55662158644C00DFE6DE /* libresolv.tbd in Frameworks */,
@@ -1098,6 +1076,15 @@
 			path = interp;
 			sourceTree = "<group>";
 		};
+		5DD570062BA77D78008522E5 /* TestLib */ = {
+			isa = PBXGroup;
+			children = (
+				5DD570072BA77D78008522E5 /* TestLib.h */,
+				5DD570082BA77D78008522E5 /* TestLib.m */,
+			);
+			path = TestLib;
+			sourceTree = "<group>";
+		};
 		5DD89CD12BA603C600858819 /* Includes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1173,15 +1160,6 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
-		8B85577A2BA01BF800465F1A /* libiSHShared */ = {
-			isa = PBXGroup;
-			children = (
-				8B85577B2BA01BF800465F1A /* libiSHShared.h */,
-				8B85577C2BA01BF800465F1A /* libiSHShared.m */,
-			);
-			path = libiSHShared;
-			sourceTree = "<group>";
-		};
 		8B8557B72BA01C4300465F1A /* iSHKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1189,6 +1167,7 @@
 				5DD89CD12BA603C600858819 /* Includes */,
 				8B5FFEEF2BA09A800022B503 /* Sources */,
 				8B8557B82BA01C4300465F1A /* iSHKit.h */,
+				5D93F6A02BA686360046CCE3 /* module.modulemap */,
 			);
 			path = iSHKit;
 			sourceTree = "<group>";
@@ -1234,6 +1213,7 @@
 				BB10E5D2248DCFEA009C7A74 /* RootsTableViewController.m */,
 				BBAEE33A249BDADC0069EBB5 /* ProgressReportViewController.h */,
 				BBAEE33B249BDADC0069EBB5 /* ProgressReportViewController.m */,
+				5DB0D6EE2BA6B22B00CFABE6 /* fakefs.h */,
 				BB10E5C2248DBA7B009C7A74 /* fakefs.c */,
 				BB10E0C1248DA5B0009C7A74 /* libarchive.xcodeproj */,
 			);
@@ -1251,6 +1231,7 @@
 		BB18B27F1F97F2590059FCD8 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				5DB0D6D32BA6A7DD00CFABE6 /* xcode-env.sh */,
 				BB13F7C8200ACC24003D1C4D /* xcode-meson.sh */,
 				494D03F72727DAC6004F0CCE /* xcode-ninja.sh */,
 				BB0C03002AEEC85500E5ECBB /* gen_apk_repositories.py */,
@@ -1358,9 +1339,9 @@
 				BB9C7B88240A343400F5D4F0 /* iSH.xcconfig */,
 				BB4A53931FAA393B00A72ACE /* most of the code */,
 				BB18B27F1F97F2590059FCD8 /* Scripts */,
-				8B85577A2BA01BF800465F1A /* libiSHShared */,
 				8B8557B72BA01C4300465F1A /* iSHKit */,
 				8B8557C32BA01C4400465F1A /* iSHKitTests */,
+				5DD570062BA77D78008522E5 /* TestLib */,
 				BB792B511F96D90D00FFB7A4 /* Products */,
 				BB792B7D1F96E32B00FFB7A4 /* Frameworks */,
 			);
@@ -1728,7 +1709,7 @@
 /* Begin PBXLegacyTarget section */
 		BB13F7CA200ACC31003D1C4D /* Meson */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "";
+			buildArgumentsString = /Users/user256616/homebrew;
 			buildConfigurationList = BB13F7CB200ACC31003D1C4D /* Build configuration list for PBXLegacyTarget "Meson" */;
 			buildPhases = (
 			);
@@ -1819,12 +1800,10 @@
 			buildRules = (
 			);
 			dependencies = (
-				8B5FFEF92BA0ABC80022B503 /* PBXTargetDependency */,
-				5DD89CD72BA6371500858819 /* PBXTargetDependency */,
-				8B8557D92BA037E300465F1A /* PBXTargetDependency */,
-				5DD89CD52BA636E800858819 /* PBXTargetDependency */,
-				8B8557DB2BA037E300465F1A /* PBXTargetDependency */,
-				8B5FFEF72BA0A9FB0022B503 /* PBXTargetDependency */,
+				5DB0D7472BA7147600CFABE6 /* PBXTargetDependency */,
+				5DAD21792BA7E8EC00CCA448 /* PBXTargetDependency */,
+				5DAD217B2BA7E8F100CCA448 /* PBXTargetDependency */,
+				5DAD21732BA7E4A700CCA448 /* PBXTargetDependency */,
 			);
 			name = iSHKit;
 			productName = iSHKit;
@@ -1921,7 +1900,6 @@
 				BB10E5CB248DBAB7009C7A74 /* PBXTargetDependency */,
 				BB13F7E7200AD874003D1C4D /* PBXTargetDependency */,
 				BB88F49E2154760800A341FD /* PBXTargetDependency */,
-				8B8557C82BA01C4400465F1A /* PBXTargetDependency */,
 			);
 			name = iSH;
 			productName = iSH;
@@ -2748,33 +2726,25 @@
 			target = BB13F7DB200AD81D003D1C4D /* libish */;
 			targetProxy = 497F6D5A254E609000C82F46 /* PBXContainerItemProxy */;
 		};
-		5DD89CD52BA636E800858819 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilters = (
-				ios,
-				macos,
-			);
-			target = BBFB2C542590257E00545EAB /* libish_emu */;
-			targetProxy = 5DD89CD42BA636E800858819 /* PBXContainerItemProxy */;
-		};
-		5DD89CD72BA6371500858819 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilters = (
-				ios,
-				macos,
-			);
-			target = BB21A1662689041500BD19B4 /* libfakefs */;
-			targetProxy = 5DD89CD62BA6371500858819 /* PBXContainerItemProxy */;
-		};
-		8B5FFEF72BA0A9FB0022B503 /* PBXTargetDependency */ = {
+		5DAD21732BA7E4A700CCA448 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BB88F48F2154760800A341FD /* iSHFileProvider */;
-			targetProxy = 8B5FFEF62BA0A9FB0022B503 /* PBXContainerItemProxy */;
+			targetProxy = 5DAD21722BA7E4A700CCA448 /* PBXContainerItemProxy */;
 		};
-		8B5FFEF92BA0ABC80022B503 /* PBXTargetDependency */ = {
+		5DAD21792BA7E8EC00CCA448 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libarchive;
+			targetProxy = 5DAD21782BA7E8EC00CCA448 /* PBXContainerItemProxy */;
+		};
+		5DAD217B2BA7E8F100CCA448 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB13F7DB200AD81D003D1C4D /* libish */;
+			targetProxy = 5DAD217A2BA7E8F100CCA448 /* PBXContainerItemProxy */;
+		};
+		5DB0D7472BA7147600CFABE6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8B8557842BA01C0800465F1A /* libiSHShared */;
-			targetProxy = 8B5FFEF82BA0ABC80022B503 /* PBXContainerItemProxy */;
+			targetProxy = 5DB0D7462BA7147600CFABE6 /* PBXContainerItemProxy */;
 		};
 		8B8557C02BA01C4400465F1A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2785,21 +2755,6 @@
 			isa = PBXTargetDependency;
 			target = BB792B4F1F96D90D00FFB7A4 /* iSH */;
 			targetProxy = 8B8557C12BA01C4400465F1A /* PBXContainerItemProxy */;
-		};
-		8B8557C82BA01C4400465F1A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B8557B52BA01C4300465F1A /* iSHKit */;
-			targetProxy = 8B8557C72BA01C4400465F1A /* PBXContainerItemProxy */;
-		};
-		8B8557D92BA037E300465F1A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB13F7DB200AD81D003D1C4D /* libish */;
-			targetProxy = 8B8557D82BA037E300465F1A /* PBXContainerItemProxy */;
-		};
-		8B8557DB2BA037E300465F1A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libarchive;
-			targetProxy = 8B8557DA2BA037E300465F1A /* PBXContainerItemProxy */;
 		};
 		BB10E5CB248DBAB7009C7A74 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2940,12 +2895,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBEF192C26806546001225BD /* AppLib.xcconfig */;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"DEBUG=1",
 					"ISH_LIBISHSHARED=1",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = "Debug-ApplePleaseFixFB19282108";
 		};
@@ -2953,11 +2915,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBEF192C26806546001225BD /* AppLib.xcconfig */;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"ISH_LINUX=1",
 					"ISH_LIBISHSHARED=1",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = DebugLinux;
 		};
@@ -2965,8 +2934,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBEF192C26806546001225BD /* AppLib.xcconfig */;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "ISH_LIBISHSHARED=1";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = Release;
 		};
@@ -2974,17 +2950,25 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBEF192C26806546001225BD /* AppLib.xcconfig */;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"ISH_LINUX=1",
 					"ISH_LIBISHSHARED=1",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = ReleaseLinux;
 		};
 		8B8557CC2BA01C4400465F1A /* Debug-ApplePleaseFixFB19282108 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -3046,7 +3030,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"$(SRCROOT)/deps/libarchive/libarchive",
 				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -3058,6 +3041,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = iSHKit/module.modulemap;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -3067,7 +3051,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3078,6 +3063,7 @@
 		8B8557CD2BA01C4400465F1A /* DebugLinux */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -3139,7 +3125,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"$(SRCROOT)/deps/libarchive/libarchive",
 				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -3151,6 +3136,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = iSHKit/module.modulemap;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -3160,7 +3146,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3171,6 +3158,7 @@
 		8B8557CE2BA01C4400465F1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -3226,7 +3214,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"$(SRCROOT)/deps/libarchive/libarchive",
 				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -3238,6 +3225,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = iSHKit/module.modulemap;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -3246,7 +3234,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -3258,6 +3247,7 @@
 		8B8557CF2BA01C4400465F1A /* ReleaseLinux */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -3313,7 +3303,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
-					"$(SRCROOT)/deps/libarchive/libarchive",
 				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -3325,6 +3314,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
+				MODULEMAP_FILE = iSHKit/module.modulemap;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -3333,7 +3323,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
